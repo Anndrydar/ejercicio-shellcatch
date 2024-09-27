@@ -8,7 +8,6 @@ const checkToken = (req,res,next) => {
     }
 
     const token = req.headers['authorization'];
-    console.log('Token valido');
     try{
         const payload = jwt.verify(token,'galeria de fotos');
     }catch(error){
@@ -25,5 +24,3 @@ const checkToken = (req,res,next) => {
 module.exports = {
     checkToken
 }
-
-

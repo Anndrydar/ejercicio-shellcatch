@@ -8,7 +8,7 @@ const {checkToken} = require('../utils/middleware');
 router.post('/foto',upload.single('foto'),crearfoto);
 router.post('/foto-restaurada',crearfotorestaurada);
 router.get('/fotos',verfotos);
-router.get('/foto/:titulo',buscarfoto);
+router.get('/foto/:titulo',checkToken,buscarfoto);
 router.delete('/foto/:id',eliminarfoto);
 
 

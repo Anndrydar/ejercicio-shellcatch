@@ -39,6 +39,17 @@ const PapeleraReciclaje = () => {
     }
   };
 
+  const handleDeletePermanente = async (id) => {
+    try {
+      await axios.delete(`${URL}/papelera/${id}`);
+      const updatedFotos = fotos.filter((foto) => foto._id !== id);
+      setFotos(updatedFotos);
+      alert('Se elimino la imagen permanentemente de la app');
+    } catch (error) {
+      console.error('Error al eliminar la foto:', error);
+    }
+  };
+
 
 
   return (
@@ -55,6 +66,9 @@ const PapeleraReciclaje = () => {
                 foto.descripcion
             )}>
              Restaurar imagen
+            </Button>
+            <Button className="primary-btn" onClick={() => handleDeletePermanente(foto._id)}>
+             Borrar permanente
             </Button>
           </div>
         ))}
