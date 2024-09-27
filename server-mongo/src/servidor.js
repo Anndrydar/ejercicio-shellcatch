@@ -4,6 +4,7 @@ const cors = require("cors");
 require('dotenv').config();
 const ruta1 = require('./routes/galeria');
 const ruta2 = require('./routes/usuario');
+const ruta3 = require('./routes/papelera');
 
 const app = express();
 const PORT = process.env.PORT;
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/app', ruta1);
 app.use('/app', ruta2);
+app.use('/app',ruta3);
 
 
 
