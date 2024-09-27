@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
-import './form.css'; // Asegúrate de que esto apunte a tu archivo CSS
+import './form.css';
 
 const Formulariogaleria = () => {
   const [fotos, setFotos] = useState([]);
@@ -26,13 +26,13 @@ const Formulariogaleria = () => {
     fetchFotos();
   }, []);
 
-  const handleDeleteFoto = async (id,titulo,foto,descripcion) => {
+  const handleDeleteFoto = async (id, titulo, foto, descripcion) => {
     try {
-        const reciclaje = {
-            titulo,
-            foto,
-            descripcion
-          };
+      const reciclaje = {
+        titulo,
+        foto,
+        descripcion,
+      };
       await axios.post(`${URL}/papelera`, reciclaje);
       await axios.delete(`${URL}/foto/${id}`);
       const updatedFotos = fotos.filter((foto) => foto._id !== id);
@@ -73,11 +73,23 @@ const Formulariogaleria = () => {
     }
   };
 
+  // Función para cerrar sesión
+  const handleLogout = () => {
+    localStorage.removeItem('token-galeria');
+    // Redirigir a la página de inicio de sesión
+    window.location.href = '/'; 
+  };
+
   return (
     <div className="photo-app">
-      <Button variant="primary" onClick={() => setShowModal(true)}>
-        Subir Nueva Foto
-      </Button>
+      <div className="d-flex justify-content-between mb-3">
+        <Button variant="primary" onClick={() => setShowModal(true)}>
+          Subir Nueva Foto
+        </Button>
+        <Button variant="danger" onClick={handleLogout}>
+          Cerrar Sesión
+        </Button>
+      </div>
 
       {/* Modal para el formulario */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
@@ -136,10 +148,10 @@ const Formulariogaleria = () => {
             <img src={foto.foto} alt={foto.titulo} className="photo-image" />
             <p className="photo-title">{foto.titulo}</p>
             <p className="photo-description">{foto.descripcion}</p>
-            <Button className="delete-btn" onClick={() => handleDeleteFoto(foto._id,foto.titulo,
-                foto.foto,
-                foto.descripcion
-            )}>
+            <Button
+              className="delete-btn"
+              onClick={() => handleDeleteFoto(foto._id, foto.titulo, foto.foto, foto.descripcion)}
+            >
               Mover a Papelera
             </Button>
           </div>

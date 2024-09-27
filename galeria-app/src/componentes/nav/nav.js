@@ -9,7 +9,7 @@ const Header = () => {
       <h1>Galeria de momentos</h1>
       <hr />
       <div className="links">
-      <NavLink to="/" className="link" activeClassName="active">
+      <NavLink to="/inicio" className="link" activeClassName="active">
           Inicio
         </NavLink>
         <NavLink to="/papelera" className="link" activeClassName="active">

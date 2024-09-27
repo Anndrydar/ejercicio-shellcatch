@@ -1,0 +1,68 @@
+
+
+.container {
+    max-width: 400px; /* Ancho máximo del formulario */
+    width: 100%; /* Ancho completo hasta el máximo */
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    padding: 20px; /* Espaciado interno */
+}
+
+h2 {
+    text-align: center; /* Centrar el texto */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.label {
+    margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+    color: #555; /* Color de las etiquetas */
+}
+
+.input-field {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 5px; /* Esquinas redondeadas */
+    margin-bottom: 15px; /* Espacio entre campos */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.input-field:focus {
+    border-color: #007bff; /* Color de borde al enfocarse */
+    outline: none; /* Sin contorno por defecto */
+}
+
+.button {
+    width: 100%; /* Botón de ancho completo */
+    padding: 10px; /* Espaciado interno */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px; /* Menos espaciado en pantallas pequeñas */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .input-field {
+        padding: 8px; /* Menos espaciado interno en pantallas pequeñas */
+    }
+
+    .button {
+        padding: 8px; /* Menos espaciado interno en pantallas pequeñas */
+    }
+}
