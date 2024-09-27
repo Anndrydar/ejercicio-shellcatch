@@ -1,0 +1,78 @@
+/* Estilos para el header */
+header {
+    background: linear-gradient(135deg, #6c757d, #343a40); /* Degradado de color */
+    padding: 30px; /* Aumentar el padding */
+    border-radius: 10px; /* Esquinas más redondeadas */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+    text-align: center;
+    color: #fff;
+    position: relative; /* Posición relativa para el uso de pseudo-elementos */
+}
+
+/* Título del header */
+header h1 {
+    font-size: 32px; /* Aumentar el tamaño de la fuente */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Mayúsculas */
+}
+
+/* Línea horizontal */
+header hr {
+    border-top: 2px solid rgba(255, 255, 255, 0.6); /* Línea más delgada */
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0.7;
+}
+
+/* Estilos para los enlaces */
+.links {
+    margin-top: 25px;
+}
+
+.links .link {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 12px 24px; /* Aumentar el padding */
+    border-radius: 5px;
+    background-color: #007bff; /* Color azul más claro */
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.2s; /* Efecto de transformación */
+}
+
+/* Efecto al pasar el mouse */
+.links .link:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+/* Enlace activo */
+.active {
+    background-color: #28a745; /* Color verde para el enlace activo */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    header {
+        padding: 20px; /* Reducir padding en dispositivos móviles */
+    }
+
+    header h1 {
+        font-size: 26px; /* Ajustar tamaño en dispositivos móviles */
+    }
+
+    .links .link {
+        font-size: 16px;
+        padding: 10px 20px; /* Ajustar padding */
+        margin: 5px 0;
+        display: block; /* Mostrar enlaces en bloque */
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column; /* Alinear verticalmente */
+        align-items: center;
+    }
+}

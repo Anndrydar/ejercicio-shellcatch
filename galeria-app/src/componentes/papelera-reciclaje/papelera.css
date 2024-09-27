@@ -1,0 +1,180 @@
+/* Estilo del formulario */
+.custom-form {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: auto; /* Centrar el formulario */
+}
+
+/* Estilo de las etiquetas del formulario */
+.custom-label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* Estilo de los campos de entrada */
+.custom-input,
+.custom-input-file {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: border-color 0.3s;
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluir padding en el ancho */
+}
+
+.custom-input:focus,
+.custom-input-file:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilo del botón de envío */
+.submit-btn {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    width: 100%; /* Ancho completo */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de la lista de fotos */
+.photo-list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adaptar columnas */
+    gap: 20px; /* Espaciado entre las tarjetas */
+}
+
+/* Estilo de cada tarjeta de foto */
+.photo-card {
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    background-color: #f8f8f8;
+    transition: transform 0.3s;
+}
+
+.photo-card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo de la imagen */
+.photo-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Estilo del título y descripción de la foto */
+.photo-title {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.photo-description {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Estilo del botón de eliminar */
+.delete-btn {
+    background-color: #dc3545; /* Color rojo para eliminar */
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Espaciado superior */
+    width: 100%; /* Ancho completo */
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo del modal */
+.modal-content {
+    border-radius: 8px;
+    max-width: 90%; /* Ancho máximo del modal */
+    margin: auto; /* Centrar el modal */
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .custom-form {
+        padding: 15px;
+    }
+
+    .custom-label {
+        font-size: 1rem;
+    }
+
+    .submit-btn,
+    .delete-btn {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .photo-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Menos columnas en pantallas pequeñas */
+    }
+
+    .photo-title {
+        font-size: 0.9rem;
+    }
+
+    .photo-description {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-form {
+        padding: 10px;
+    }
+
+    .custom-label {
+        font-size: 0.9rem;
+    }
+
+    .submit-btn,
+    .delete-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    .photo-title {
+        font-size: 0.8rem;
+    }
+
+    .photo-description {
+        font-size: 0.7rem;
+    }
+}

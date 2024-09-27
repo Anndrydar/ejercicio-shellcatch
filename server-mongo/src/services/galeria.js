@@ -21,6 +21,19 @@ const crearfoto = async (req, res) => {
     }
   };
 
+  const crearfotorestaurada = async (req, res) => {
+    try {
+      const nuevaFoto = new fotoSchema({
+        titulo: req.body.titulo,
+        foto: req.body.foto,
+        descripcion: req.body.descripcion
+      });
+      const savedFoto = await nuevaFoto.save();
+      res.json(savedFoto);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
 
 
 const verfotos = (req,res) => {
@@ -49,5 +62,6 @@ module.exports = {
     crearfoto,
     verfotos,
     eliminarfoto,
-    buscarfoto
+    buscarfoto,
+    crearfotorestaurada
 }
